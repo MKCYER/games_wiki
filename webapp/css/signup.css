@@ -54,6 +54,11 @@
     text-rendering: auto;
     width: 150%;
 }
+.form1 .input1{
+    background-color: #33b4de;
+    color: white;
+    cursor: pointer;
+}
 .pad{
     line-height: 40px;
     text-align: right;

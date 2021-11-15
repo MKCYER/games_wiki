@@ -7,3 +7,20 @@ function checkemail() {
     }else
         document.getElementById("tip").innerText=""
 }
+function check(){
+    var reg = new RegExp("^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$");
+    var b1=reg.test(document.getElementById("email").value);
+    var name=document.getElementById("name");
+    var passwd=document.getElementById("passwd");
+    var account=document.getElementById("account");
+    if(b1&&name.value!=""&&passwd.value!=""&&account.value!=""){
+        document.getElementById("tip1").innerText="";
+        return true;
+    }
+
+    else{
+        document.getElementById("tip1").innerText="少了些。。。";
+        return false;
+    }
+
+}

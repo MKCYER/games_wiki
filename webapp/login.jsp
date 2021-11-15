@@ -86,7 +86,6 @@
             int t = 0;//登陆成功
             if(request.getHeader("REFERER").contains("games"))
                 t=2;
-            //数据库里记得要提前存好用户名和密码，否则无法登陆！
             while (res.next()) {
                 //获取数据库表中每一列的值
                 if (password.equals(res.getString("userPasswd"))) {

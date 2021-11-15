@@ -17,16 +17,17 @@
     <h1>注册</h1>
 </div>
 <div class="form1">
-    <form action="SignupSer" method="post">
-        <input type="text" name="name" placeholder="昵称" maxlength="10"><br>
+    <form action="SignupSer" method="post" onsubmit="return check()">
+        <input type="text" name="name" id="name" placeholder="昵称( 展现你文采的时候到了-v- )" maxlength="10"><br>
         <div class="pad"></div>
-        <input type="text" name="account" placeholder="账户" maxlength="16"><br>
+        <input type="text" name="account" id="account" placeholder="账户( 想怎么写怎么写 |ω・）)" maxlength="16"><br>
         <div class="pad"></div>
-        <input name="passwd" type="password" placeholder="密码" maxlength="16">
+        <input name="passwd" type="password" id="passwd" placeholder="密码" maxlength="16">
         <div class="pad"></div>
-        <input name="email" id="email" onkeydown="checkemail()" placeholder="邮箱">
+        <input name="email" id="email" onkeydown="checkemail()" placeholder="邮箱( 好好写，没做什么认真的检测，到时候密码找不回来不负责(๑￫ܫ￩) )">
         <p id="tip" style="color: red"></p>
-        <input type="submit" value="注册">
+        <input class="input1" type="submit" value="注册" >
+        <p id="tip1"></p>
     </form>
 </div>
 </body>
