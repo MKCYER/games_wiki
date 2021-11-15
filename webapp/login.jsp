@@ -72,32 +72,32 @@
 		</div>
 	</div>
 </div>
-<%
+<jsp:useBean id="bean" class="web.MysqlBean">
+    <%
         try {
             String account = request.getParameter("account");
             String password = request.getParameter("passwd");
             String uid = null;
             String coin = null;
             String name = null;
-            MysqlBean bean = new MysqlBean();
             String sql = "select * from users " + "where userAcc=" + "\"" + account + "\"" + ";";  //查询语句
-            Statement sta = bean.getSta();
-            ResultSet res = sta.executeQuery(sql);
             int t = 0;//登陆成功
             if(request.getHeader("REFERER").contains("games"))
                 t=2;
-            while (res.next()) {
-                //获取数据库表中每一列的值
-                if (password.equals(res.getString("userPasswd"))) {
+            try{
+                if(bean.executeLogin(account,password)){
+                    t=1;
+                    sql = "select * from users " + "where userAcc=" + "\"" + account + "\"" + " and userPasswd=\""+password+"\";";
+                    ResultSet res= bean.executeQuery(sql);
+                    res.next();
                     uid = res.getString("uid");
                     coin = res.getString("coinNum");
                     name = res.getString("userName");
-                    t = 1;
-                    break;
-                } else {
-                    t = 0;
                 }
+            }catch (Exception e){
+                System.out.println(e.getMessage());
             }
+
             if (t == 1) {
                 session = null;//清除页面滞留的session，这样点击退出以后，下次登录确保重新获取新的用户名
                 session = request.getSession();//获取session
@@ -115,6 +115,8 @@
         } catch (Exception e) {
             out.print(e.getMessage());
         }
-%>
+    %>
+</jsp:useBean>
+
 </body>
 </html>

@@ -238,7 +238,7 @@ iframe {
   width: 100%;
   background: #e6e6e6;
   height: 50px;
-  border-radius: 50%;
+  border-radius: 25px;
   padding: 0 30px 0 68px;
 }
 
