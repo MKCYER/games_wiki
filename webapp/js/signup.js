@@ -22,5 +22,4 @@ function check(){
         document.getElementById("tip1").innerText="少了些。。。";
         return false;
     }
-
 }

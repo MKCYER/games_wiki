@@ -13,8 +13,23 @@ import web.MysqlBean;
 
 @WebServlet(name = "SignupSer", value = "/SignupSer")
 public class SignupSer extends HttpServlet {
+    private boolean sql_inj(String str){
+        String inj_str = "'|,|=|+|*|(|)|^|;";
+        String inj_stra[] = inj_str.split("|");
+        for (int i=0 ; i<inj_stra.length ; i++ ){
+            if (str.contains(inj_stra[i])){
+                return true;
+            }
+        }
+        return false;
+    }
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         MysqlBean bean=new MysqlBean();
         response.setContentType("text/html");
         request.setCharacterEncoding("utf-8");
@@ -23,6 +38,11 @@ public class SignupSer extends HttpServlet {
         String account=request.getParameter("account");
         String passwd=request.getParameter("passwd");
         String email=request.getParameter("email");
+        if(sql_inj(name)||sql_inj(account)||sql_inj(email)||sql_inj(passwd)){
+            response.setHeader("refresh", "1.5;url=signup.html");
+            response.getWriter().write("<h1 style=\"color:red\">有部合法字符</h1>");
+            return;
+        }
         Date date=new Date();
         SimpleDateFormat ft = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");//日期标准化
         String datenow=ft.format(date);
@@ -39,10 +59,5 @@ public class SignupSer extends HttpServlet {
         } catch (SQLException e) {
             System.out.println("用户创建失败");
         }
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doGet(request,response);
     }
 }
