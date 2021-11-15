@@ -13,8 +13,8 @@ public class MysqlBean {
             Class.forName("com.mysql.jdbc.Driver");  //驱动程序名
             String url = "jdbc:mysql://localhost:3306/games_wiki"; //数据库名
             String username = "root";  //数据库用户名
-            //String passwd = "bujisql2021";  //服务器数据库密
-            String passwd="lk1441553496";
+            String passwd = "bujisql2021";  //服务器数据库密
+            //String passwd="lk1441553496";
             con = DriverManager.getConnection(url, username, passwd);
             sta = con.createStatement();
         } catch (Exception e) {

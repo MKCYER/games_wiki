@@ -5,7 +5,10 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.sql.*;
+import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.Date;
+
 import web.MysqlBean;
 
 @WebServlet(name = "SignupSer", value = "/SignupSer")
@@ -20,9 +23,12 @@ public class SignupSer extends HttpServlet {
         String account=request.getParameter("account");
         String passwd=request.getParameter("passwd");
         String email=request.getParameter("email");
+        Date date=new Date();
+        SimpleDateFormat ft = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");//日期标准化
+        String datenow=ft.format(date);
         Statement sta=bean.getSta();
         try {
-            if(sta.executeUpdate("insert into users(userName,email,userAcc,userPasswd) values(\""+name+"\",\""+email+"\",\""+account+"\",\""+passwd+"\");")>=1){
+            if(sta.executeUpdate("insert into users(userName,email,userAcc,userPasswd,lastdate) values(\""+name+"\",\""+email+"\",\""+account+"\",\""+passwd+"\",\""+datenow+"\");")>=1){
                 response.setHeader("refresh", "0.5;url=login.jsp");
                 response.getWriter().write("<h1>创建成功，马上返回登陆界面</h1>");
             }
