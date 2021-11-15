@@ -1,0 +1,123 @@
+.ppp{
+    color: red;
+}
+.div_head{
+    width:100%;
+    height:150px;
+
+    margin-top:0px;
+}
+
+.div_mid{
+    width:100%;
+    height:130px;
+
+    margin-top:0px;
+}
+.div_body{
+    width:100%;
+    height:200px;
+
+    margin-top:0px;
+}
+.div_base{
+    width:100%;
+    height:60px;
+
+    float:left;
+    margin-top:0px;
+}
+.div_based{
+    width:100%;
+    height:100%;
+
+    float:left;
+    margin-top:0px;
+
+}
+
+
+.div_head1{
+    width:540px;
+    height:24px;
+
+    float:right;
+    margin-top:25px;
+
+}
+.div_head2{
+    width:50px;
+    height:24px;
+
+    float:left;
+    line-height:24px;
+    text-align:center;
+}
+.div_mid1{
+    width:270px;
+    height:130px;
+
+    float:left;
+
+    margin-left:39%;
+}
+.div_body1{
+    width:600px;
+    height:36px;
+    background-color:#999;
+    float:left;
+
+    margin-left:32%;
+}
+
+.div_base1{
+    width:60px;
+    height:60px;
+    margin:0 auto;
+    float:left;
+    margin-top:5%;
+}
+.div{
+    float:left; width:200px; height:200px;
+
+}
+.test {
+    width   : 50px;
+    height  : 200px;
+    overflow: auto;
+    float   : left;
+    margin  : 5px;
+    border  : none;
+}
+.scrollbar {
+    width : 30px;
+    height: 300px;
+    margin: 0 auto;
+
+}
+.test-5::-webkit-scrollbar {
+    /*滚动条整体样式*/
+    width : 10px;  /*高宽分别对应横竖滚动条的尺寸*/
+    height: 1px;
+}
+.test-5::-webkit-scrollbar-thumb {
+    /*滚动条里面小方块*/
+    border-radius   : 10px;
+    background-color: skyblue;
+    background-image: -webkit-linear-gradient(
+            45deg,
+            rgba(255, 255, 255, 0.2) 25%,
+            transparent 25%,
+            transparent 50%,
+            rgba(255, 255, 255, 0.2) 50%,
+            rgba(255, 255, 255, 0.2) 75%,
+            transparent 75%,
+            transparent
+    );
+}
+.test-5::-webkit-scrollbar-track {
+    /*滚动条里面轨道*/
+    box-shadow   : inset 0 0 5px rgba(0, 0, 0, 0.2);
+    background   : #ededed;
+    border-radius: 10px;
+}
