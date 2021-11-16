@@ -24,7 +24,7 @@
 	<div class="container-login100">
 		<div class="wrap-login100">
 			<div class="login100-pic js-tilt" data-tilt>
-				<img src="images/img-01.png" alt="IMG">
+				<img src="images/tower.png" alt="IMG">
 			</div>
 
 			<form class="login100-form validate-form" action="#" method="post">
@@ -82,7 +82,7 @@
             String name = null;
             String sql = "select * from users " + "where userAcc=" + "\"" + account + "\"" + ";";  //查询语句
             int t = 0;//登陆成功
-            if(request.getHeader("REFERER").contains("games"))
+            if(request.getHeader("REFERER")==null||request.getHeader("REFERER").contains("games"))
                 t=2;
             try{
                 if(bean.executeLogin(account,password)){

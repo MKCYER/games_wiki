@@ -194,7 +194,10 @@ iframe {
 /*------------------------------------------------------------------
 [  ]*/
 .login100-pic {
-  width: 316px;
+    position: relative;
+    top:55px;
+    left: -20px;
+  width: 420px;
 }
 
 .login100-pic img {
@@ -363,7 +366,7 @@ iframe {
   }
 
   .login100-pic {
-    width: 35%;
+    width: 50%;
   }
 
   .login100-form {
