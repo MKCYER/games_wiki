@@ -1,4 +1,10 @@
-
+body{
+    background: url("") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    filter:alpha(opacity=50);
+}
 .con{
     position:relative;
     line-height: 5.875rem;
