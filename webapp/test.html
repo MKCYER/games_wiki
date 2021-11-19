@@ -1,14 +1,9 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>html内嵌markdown</title>
-    <script src="js/showdown.js"></script>
-    <link rel="stylesheet" type="text/css" href="github-markdown.css">
-    <link rel="stylesheet" type="text/css" href="css/markdownhere.css">
-    <script src="https://cdn.staticfile.org/jquery/3.4.0/jquery.min.js"></script>
-    <script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <meta charset="utf-8">
+    <title>富文本编辑器（WYSIWYG）</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="keywords" content="编辑器,在线编辑器,富文本编辑器,所见即所得编辑器,opensource rich wysiwyg text editor jquery bootstrap execCommand html5" />
     <meta name="description" content="这个微型的JQuery Bootstrap WYSIWYG 插件能将任何DIV变为HTML5富文本编辑器" />
@@ -17,7 +12,6 @@
     <link href="http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet">
     <link href="css/index.css" rel="stylesheet">
 </head>
-
 <body>
 
 <div class="container">
@@ -78,10 +72,8 @@
             </div>
             <input type="text" data-edit="inserttext" id="voiceBtn" x-webkit-speech="">
         </div>
-        <div id="editor">
-            <textarea id="md-area" onkeyup=mdConverter()></textarea>  <!-- 键盘每次点击实时调用 -->
-            <article id="view-area" class="markdown-here-wrapper">            <!-- github主题样式应用 -->
-            </article>
+        <div id="editor" style="overflow:scroll;">
+            Go ！！！
         </div>
     </div>
     <script src="js/jquery-3.1.1.min.js"></script>
@@ -117,21 +109,10 @@
                 // }
             };
             initToolbarBootstrapBindings();
-            $('#view-area').wysiwyg();
+            $('#editor').wysiwyg();
             window.prettyPrint && prettyPrint();
         });
     </script>
 </div>
-
-
-<script>
-    function mdConverter() {
-        var md = document.getElementById("md-area").value;
-        var converter = new showdown.Converter();  //增加拓展table
-        converter.setOption('tables', true);  //启用表格选项。从showdown 1.2.0版开始，表支持已作为可选功能移入核心拓展，showdown.table.min.js扩展已被弃用
-        var view = converter.makeHtml(md);
-        document.getElementById("view-area").innerHTML = view;
-    }
-</script>
 </body>
 </html>
