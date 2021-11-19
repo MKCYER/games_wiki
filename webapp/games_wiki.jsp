@@ -95,21 +95,21 @@
         </form>
         <!-- 设置显示框，后期与数据库连接-->
         <div style="height: 340px;width:120px;left:25%;top:5%; overflow-x:hidden; position:relative;background-color: white;border-radius:10px;" class="test test-5">
-            <div class="scrollbar" style="position: relative;left: -38px">
+            <div class="scrollbar" >
                 <jsp:useBean id="bean" class="web.MysqlBean">
                     <%
                         try{
                             String sql="select * from games;";
                             ResultSet resultSet=bean.executeQuery(sql);
                             while(resultSet.next()){
-                                out.write("<a href=\""+resultSet.getString("gameIh")+"\">"+resultSet.getString("gameName")+"</a>");
+                                out.write("<a href=\""+resultSet.getString("gameIh")+"\">"+resultSet.getString("gameName")+"</a><br>");
                             }
                         }catch (Exception e){
                             out.print(e.getMessage());
                         }
                     %>
                 </jsp:useBean>
-
+                <!-- <a href="wiki/Arkwiki.jsp">明日方舟</a> -->
             </div>
         </div>
 </div>
