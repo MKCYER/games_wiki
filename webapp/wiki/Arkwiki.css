@@ -1,0 +1,500 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    /* background-color: black; */
+}
+body a {
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+    text-decoration: none;
+}
+body a:hover {
+    text-decoration: none;
+}
+body a:focus {
+    outline: none;
+    text-decoration: none;
+}
+#demo {
+    background: #FFF;
+    overflow:hidden;
+    border: 1px dashed #CCC;
+    width: 990px;
+    height: 200px;
+}
+#demo img {
+    border: 3px solid #F2F2F2;
+}
+#indemo {
+    float: left;
+    width: 800%;
+}
+#demo1 {
+    float: left;
+}
+#demo2 {
+    float: left;
+}
+.DL {
+    float: right;
+    color: white;
+    margin-right: 50px;
+    margin-top: 10px;
+    font-family: cursive,Bender;
+    display: inline-block;
+}
+
+.ALL {
+    z-index: 5;
+    background-color: black;
+    height: 100%;
+    /* background-image: url(./方舟/c10a501b88fdc388bdab953e8bba8946.png); */
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.DH {
+    /* background-color: black; */
+    height: 100px;
+    background-color: black;
+}
+
+a {
+    text-decoration: none;
+    color: azure;
+    line-height: 50px;
+    cursor: pointer;
+}
+
+.a1:hover {
+    color: #0aaff0;
+}
+
+.CD {
+    text-decoration: none;
+    color: azure;
+    margin-top: 10px;
+    margin-left: 30px;
+    font-family: cursive,Bender;
+    float: left;
+    position: fixed;
+    font-size:16px;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    line-height: 50px;
+    height: 50px;
+}
+
+.nav {
+    display: none;
+    z-index: 100;
+    background-color: gainsboro;
+    width: 100px;
+    height: 100px;
+    border: 1px solid red;
+    position: absolute;
+    top: 10px;
+}
+.CD:hover .nav{
+    display: block;
+    /* z-index: 100; */
+}
+
+.GG {
+    position: absolute;
+    top: 8%;
+    left: 20%;
+    width: 990px;
+    height: 700px;
+    margin: 0 auto;
+}
+
+.change {
+    height: 200px;
+    border: 1px solid #c0c0c0;
+    text-align: right;
+    width: 990px;
+}
+
+.divimg {
+    margin-right: 20px;
+    height: 200px;
+    width: 990px;
+}
+
+
+
+
+.mainbody1 {
+    height: 170px;
+    width: 990px;
+    border: 1px solid #c0c0c0;
+    /* margin-top: 10px; */
+    /* background-image: url(./方舟/1.png); */
+    background-size: 100% 100%;
+    animation-name: exchange;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+.mainbody2 {
+    /* display: inline-block; */
+    height: 461px;
+    width: 990px;
+    border: 1px solid #c0c0c0;
+    margin-left: 0px;
+    border-collapse: collapse;
+}
+
+
+
+.more {
+    margin-top: 10px;
+    border: 1px solid #1591da;
+    height: 30px;
+    width: 150px;
+    float: right;
+}
+
+.tab {
+    color: white;
+    border: 1px solid snow;
+    border-collapse: collapse;
+}
+
+td {
+    border: 1px solid snow;
+    border-bottom: none;
+    width: 330px;
+    height: 230px;
+    border-collapse: collapse;
+}
+
+td:hover {
+    background-color: #1591da;
+}
+
+td:hover span1{
+    color: black;
+}
+
+td:hover span2{
+    color: black;
+}
+
+td:hover span3{
+    background-color: black;
+}
+td:hover h1{
+    color: black;
+}
+td:hover a{
+    background-color: black;
+    color: white;
+}
+span1 {
+    position: relative;
+    bottom: 30px;
+    left: 30px;
+    color: #2bf;
+    font-size: large;
+}
+
+
+span2 {
+    position: relative;
+    left: 140px;
+    font-size: large;
+    color: #bbbebe;
+    font-family: Bender,-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+span3 {
+    background-color: #2bf;
+    position: relative;
+    top: 30px;
+    right: 270px;
+    font-size: x-small;
+}
+
+h1 {
+    position: relative;
+    left: 140px;
+    top: 10px;
+    color: #f6f7f8;
+    font-size: small;
+    word-break: break-all;
+    width: 280px;
+}
+
+.more {
+    float: right;
+    position: relative;
+    top: 10px;
+    background-color: #2bf;
+    height: 25px;
+    width: 120px;
+    line-height: 25px;
+    font-size: small;
+    margin-right: 20px;
+    text-align: right;
+    color: black;
+    font-family: Bender,'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.more1{
+    float: right;
+    position: relative;
+    top: 10px;
+    background-color: rgb(8, 14, 17);
+    height: 35px;
+    width: 120px;
+    color:#f6f7f8;
+    text-align: center;
+    border: 1px solid #2bf;
+}
+.more1 a{
+    line-height: 35px;
+}
+
+.more1:hover{
+    background-color: #2bf;
+}
+.more1:hover a{
+    color: black;
+}
+
+.photowall{
+    height: 756px;
+    width: 1400px;
+    max-width: 1400px;
+    position: relative;
+    right: 200px;
+    margin-top: 20%;
+    font-size: 16px;
+    overflow: hidden;
+}
+.wall{
+    width: 1400px;
+    height: 756px;
+}
+.photo{
+
+    /* height: 100%; */
+    float: left;
+    display: block;
+    margin-top: -20px;
+    /* margin-left: 0; */
+    overflow: hidden;
+}
+.img2{
+    /* transition: all 0.5s; */
+    transition: width 1s, height 1s, transform 1s;
+}
+.img2:hover{
+    animation-name: big;
+    animation-iteration-count: 1;
+    animation-duration: 0.5s;
+    animation-fill-mode:forwards;
+    overflow: hidden;
+    transform: scale(1.1, 1.1);
+}
+
+
+
+
+/* @keyframes big{
+    to{
+        transform: scale(1.1, 1.1);
+    }
+} */
+.photowall a{
+    text-decoration: none;
+    cursor: pointer;
+}
+.kaidie{
+    position: absolute;
+    top: 480px;
+}
+.qie{
+    position: absolute;
+    left: 280px;
+    top:160px
+}
+.yaxin{
+    position: absolute;
+    top: 274px;
+    right: 280px;
+}
+.chuxue{
+    position: absolute;
+    right: 0;
+    top: 320px;
+}
+.kelage{
+    position: absolute;
+    left: 280px;
+    top: 594px;
+}
+.banzi{
+    position: absolute;
+    left: 280px;
+    top: 434px;
+}
+.aneng{
+    position: absolute;
+    right:  560px;
+    top: 480px;
+}
+.xiaoyang{
+    position: absolute;
+    top: 434px;
+    right: 280px;
+}
+.chuxue2{
+    position: absolute;
+    top: 594px;
+    right: 280px;
+}
+.longm{
+    position: absolute;
+    top: 480px;
+    right: 0px;
+}
+ul{
+    list-style: none;
+}
+.list{
+    width: 35%;
+    height: 35%;
+    float: left;
+    animation-name: float;
+    animation-iteration-count: infinite;
+    animation-duration: 3s;
+    transition: all 1s;
+}
+
+.list:hover{
+    transform: scale(1.1, 1.1);
+}
+
+.exp{
+    animation-name: float;
+    animation-iteration-count: infinite;
+    animation-duration: 3s;
+}
+
+
+@keyframes float{
+    50%{
+        transform:translate(0px,3px);
+    }
+}
+
+
+.stone{
+    margin-top: -30px;
+
+}
+.zhenghe{
+    width: 15%;
+    height: 15%;
+    margin-left: 60px;
+    margin-top: -20px;
+}
+.ganran{
+    width: 20%;
+    height: 20%;
+    margin-top: 200px;
+    margin-left: -100px;
+    /* margin-left: -150px; */
+}
+.skill{
+    width: 25%;
+    height: 25%;
+    margin-top: 150px;
+    margin-left: -900px;
+}
+.city{
+    width: 30%;
+    height: 30%;
+    margin-top: -900px;
+    margin-left: 300px;
+}
+.Rode{
+    width: 30%;
+    height: 30%;
+    margin-left: 450px;
+    margin-top: -400px;
+    overflow: hidden;
+}
+
+
+.exp1{
+    position: relative;
+    top: 580px;
+    left: -480px;
+    color: black;
+    font-size: 40px;
+    font-family: 宋体;
+}
+.exp2{
+    position: relative;
+    top:250px;
+    left: -250px;
+    color: black;
+    font-size: 40px;
+    font-family: 宋体;
+}
+.exp3{
+    position: relative;
+    top:520px;
+    left: -250px;
+    color: black;
+    font-size: 40px;
+    font-family: 宋体;
+}
+.exp4{
+    position: relative;
+    top:550px;
+    left: -900px;
+    color: black;
+    font-size: 40px;
+    font-family: 宋体;
+}
+.exp5{
+    position: relative;
+    top:-50px;
+    /* left: -900px; */
+    color: black;
+    font-size: 40px;
+    font-family: 宋体;
+}
+.exp6{
+    position: relative;
+    top:250px;
+    /* left: 50px; */
+    color: black;
+    font-size: 40px;
+    font-family: 宋体;
+}
+.top{
+    border:1px solid #2bf;
+    width: 60px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    color: #fff;
+    float: right;
+    position: fixed;
+    bottom: 10px;
+    right: 30px;
+    z-index: 15;
+}
+.top:hover{
+    background-color: #2bf;
+    color: black;
+}
