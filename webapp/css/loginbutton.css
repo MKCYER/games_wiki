@@ -71,7 +71,7 @@ i.arrow {
     width: 200px;
     background: #fff;
     border: none;
-    padding-bottom: 1.5em;
+    padding-inline: 8px;
     font-family: 'OpenSans-Regular';
 }
 #loginForm fieldset {
@@ -133,7 +133,7 @@ fieldset#body {
     border: 1px solid #DADADA;
     color: #222;
     background: #FFF;
-    padding: 6px;
+    padding: 3px;
     font-size: 0.8125em;
     -webkit-apperance: none;
     outline: none;
@@ -178,4 +178,13 @@ fieldset#body {
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
     border-bottom: 10px solid #FFF;
+}
+span {
+    font-family: 'OpenSans-Regular';
+    font-size: 2px;
+}
+#body button{
+    cursor: pointer;
+    position: relative;
+    top: 10px;
 }

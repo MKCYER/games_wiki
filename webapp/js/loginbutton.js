@@ -40,4 +40,10 @@ $(function() {
         }
     });
 });
-
+/*
+    <script src="js/loginbutton.js"></script>
+    <script src="js/menu_jquery.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+    <link href="css/index.css" rel="stylesheet"></head>
+*/

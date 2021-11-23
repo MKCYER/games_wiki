@@ -9,10 +9,11 @@
 <html>
 <head>
     <title>Title</title>
+    <link href="css/markdownStyle.css" rel="stylesheet"></head>
 </head>
 <body>
 <%
-    out.write(request.getParameter("context"));
+    out.write(request.getParameter("uid"));
     System.out.println(1);
 %>
 </body>

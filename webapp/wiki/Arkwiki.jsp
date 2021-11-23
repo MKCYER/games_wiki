@@ -46,8 +46,9 @@
                         <input type="text" name="uid" id="account" disabled value="<%=account%>">
                         <span>硬币数</span>
                         <input type="text" name="coin" id="coin" disabled value="<%=coin%>">
-                        <form method="post" action="ClearSession">
-                            <input type="submit" value="退出" style="position:relative;top:20px;width: 50px;background-color: #03A9F4">
+                        <button onclick="window.location.href='passage/createPassage.jsp'">发布攻略</button>
+                        <form method="post" action="../ClearSession">
+                            <input type="submit" value="退出" style="cursor: pointer;position:relative;top:15px;width: 50px;background-color: #03A9F4">
                         </form>
                     </fieldset>
                 </div>

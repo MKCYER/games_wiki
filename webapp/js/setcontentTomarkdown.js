@@ -69,15 +69,35 @@ editor.customConfig.uploadImgHooks = {
 }*/
 function post() {
     // 获取内容
+    if(document.getElementById("games").value=="-1"){
+        document.getElementById("tip1").innerText="请选择所属游戏";
+        return false;
+    }
+    if(document.getElementById("head").value==""){
+        document.getElementById("tip").innerText="标题不能为空";
+        return false;
+    }
     var content = editor.txt.html();
     var temp = document.createElement("form");
-    temp.action = "test.jsp";
+    temp.action = "UploadPassage";//post的目标
     temp.method = "post";
     temp.style.display = "none";
     var opt = document.createElement("textarea");
-    opt.name = "context";
+    opt.name = "content";
     opt.value = content;
     temp.appendChild(opt);
+    var opt1 = document.createElement("textarea");
+    opt1.name="uid";
+    opt1.value=document.getElementById("uid").value;
+    temp.appendChild(opt1);
+    var opt2 = document.createElement("textarea");
+    opt2.name="gameid";
+    opt2.value=$('#games option:selected') .val();
+    temp.appendChild(opt2);
+    var opt3 = document.createElement("textarea");
+    opt3.name="title";
+    opt3.value=document.getElementById("head").value;
+    temp.appendChild(opt3);
     document.body.appendChild(temp);
     temp.submit();
     return temp;

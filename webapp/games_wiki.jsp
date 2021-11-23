@@ -19,9 +19,6 @@
     <!-- //For-Mobile-Apps -->
 
     <!-- Custom Theme files -->
-    <!-- Bootstrap Styling --> <link rel='stylesheet' href="css/bootstrap.css" type='text/css' />
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> <script src="js/jquery.min.js"></script>
-    <!-- Bootstrap-Working-File --> <script src="js/bootstrap.min.js"></script>
     <!-- Index-Page-Styling --> <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
     <!-- Owl-Carousel-Styling --> <link rel="stylesheet" href="css/owl.carousel.css" type="text/css" media="all">
     <!-- //Custom Theme files -->
@@ -74,8 +71,9 @@
                         <input type="text" name="uid" id="account" disabled value="<%=account%>">
                         <span>硬币数</span>
                         <input type="text" name="coin" id="coin" disabled value="<%=coin%>">
+                        <button onclick="window.location.href='passage/createPassage.jsp'">发布攻略</button>
                         <form method="post" action="ClearSession">
-                            <input type="submit" value="退出" style="position:relative;top:20px;width: 50px;background-color: #03A9F4">
+                            <input type="submit" value="退出" style="cursor: pointer;position:relative;top:20px;width: 50px;background-color: #03A9F4">
                         </form>
                     </fieldset>
                 </div>

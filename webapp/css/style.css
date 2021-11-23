@@ -65,6 +65,7 @@ img {
 }
 span {
     font-family: 'OpenSans-Regular';
+    font-size: 2px;
 }
 
 /*-- //Reset Code --*/
@@ -294,9 +295,9 @@ i.arrow {
 /*-- Login-Form --*/
 #loginForm {
     width: 200px;
+    padding-inline: 8px;
     background: #fff;
     border: none;
-    padding-bottom: 1.5em;
     font-family: 'OpenSans-Regular';
 }
 #loginForm fieldset {
@@ -334,6 +335,11 @@ fieldset#body {
     margin: 0 0 6px 0;
     text-align: left;
 }
+#body button{
+    cursor: pointer;
+    position: relative;
+    top: 10px;
+}
 #loginForm #lot {
     width: 100%;
     background: #0166FF;
@@ -358,7 +364,7 @@ fieldset#body {
     border: 1px solid #DADADA;
     color: #222;
     background: #FFF;
-    padding: 6px;
+    padding: 2px;
     font-size: 0.8125em;
     -webkit-apperance: none;
     outline: none;

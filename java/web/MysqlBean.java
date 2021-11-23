@@ -56,6 +56,19 @@ public class MysqlBean {
             return true;
         return false;
     }
+    public boolean insertPassage(String uid,String gameId,String title,String content) throws SQLException {
+        if(sql_inj(uid)||sql_inj(gameId)||sql_inj(title))
+            return false;
+        Date date=new Date();
+        SimpleDateFormat ft = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");//日期标准化
+        String datenow=ft.format(date);
+        String sql="insert into passages(uid,gameId,title,content,createTime,changeTime) values("+
+                uid+","+gameId+",\""+title+"\",\""+content+"\",\""+datenow+"\",\""+datenow+"\""
+                +");";
+        if(sta.executeUpdate(sql)!=0)
+            return true;
+        return false;
+    }
     public ResultSet executeQuery(String sql) throws SQLException {
         return sta.executeQuery(sql);
     }
