@@ -71,12 +71,18 @@
             out.write("<p class=\"title-txt\">"+set.getString("title")+"</p>");
             out.write("<p class=\"article-time\">"+set.getString("changeTime")+"</p></div>");
             out.write("<div class=\"article-info\">");
-            out.write("<p class=\"readcomment\"> 阅读 "+set.getString("views")+"</p>");
+            out.write("<p class=\"readcomment\"> 阅读 "+set.getString("views")+"</p><div>");
             out.write("<a class=\"oper\" href=\"updatePassage.jsp?pid="+set.getString("pid")+"\">编辑</a>");
-            out.write("</div></div></div>");
+            out.write("<a class=\"del\" href=\"DelPassage?pid="+set.getString("pid")+"\" onclick=\"return disp_confirm()\">删除</a>");
+            out.write("</div></div></div></div>");
         }
     %>
 </jsp:useBean>
 </div>
+<script>
+    function disp_confirm(){
+        return confirm("确认删除");
+    }
+</script>
 </body>
 </html>

@@ -45,6 +45,19 @@ public class MysqlBean {
     public int executeUpdate(String sql) throws SQLException {
         return sta.executeUpdate(sql);
     }
+    public boolean delpassage(String uid,String pid){
+        if(sql_inj(uid)||sql_inj(pid))
+            return false;
+        try {
+            System.out.println(uid);
+            System.out.println(pid);
+            if(sta.executeUpdate("delete from passages where uid="+uid+" and pid="+pid+";")!=0)
+                return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
     public boolean insertUsers(String name,String account,String passwd,String email) throws SQLException {
         if(sql_inj(name)||sql_inj(account)||sql_inj(email)||sql_inj(passwd))
             return false;

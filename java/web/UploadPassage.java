@@ -19,6 +19,9 @@ public class UploadPassage extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         MysqlBean bean=new MysqlBean();
+        response.setContentType("text/html");
+        request.setCharacterEncoding("utf-8");
+        response.setCharacterEncoding("UTF-8");
         try {
             //System.out.println(1);
             String uid=request.getParameter("uid");
@@ -36,7 +39,6 @@ public class UploadPassage extends HttpServlet {
                 ResultSet set=bean.executeQuery("select pid from passages where uid="+uid+" order by createTime desc;");
                 set.next();
                 response.sendRedirect("showPassage.jsp?pid="+set.getString(1));
-
             }
             else {
                 response.setHeader("refresh", "1.5;url=createPassage.jsp");
