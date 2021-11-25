@@ -1,0 +1,48 @@
+#show{
+    position: absolute;
+    top:4%;
+    left: 10%;
+}
+#author{
+    position: relative;
+    top:20px;
+    left: -30px;
+    background-color: white;
+    width: 140px;
+    height: 120px;
+}
+#author a{
+    position: absolute;
+    top:10px;
+    left: 20px;
+    font-size: 30px;
+    color: black;
+}
+#author #detail{
+    position: absolute;
+    left: 20px;
+    top:60px;
+}
+#content{
+    position: absolute;
+    top: 20px;
+    left: 120px;
+    width: 1200px;
+    height: 700px;
+    background-color: white;
+}
+.view{
+    width: 20px;
+    height: 20px;
+    position: relative;
+    top:-15px;
+}
+#content1{
+    position: relative;
+    width: 100%;
+    height: 90%;
+    top:-26px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+}
