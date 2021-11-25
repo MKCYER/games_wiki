@@ -51,7 +51,7 @@ public class MysqlBean {
         Date date=new Date();
         SimpleDateFormat ft = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");//日期标准化
         String datenow=ft.format(date);
-        String sql="insert into users(userName,email,userAcc,userPasswd,lastdate) values(\""+name+"\",\""+email+"\",\""+account+"\",\""+passwd+"\",\""+datenow+"\");";
+        String sql="insert into users(userName,email,userAcc,userPasswd,lastdate,createdate) values(\""+name+"\",\""+email+"\",\""+account+"\",\""+passwd+"\",\""+datenow+"\",\""+datenow+"\");";
         if(sta.executeUpdate(sql)>=1)
             return true;
         return false;
