@@ -53,8 +53,8 @@ body a:focus {
     background-color: black;
     height: 100%;
     /* background-image: url(./方舟/c10a501b88fdc388bdab953e8bba8946.png); */
-    background-size: 100% 100%;
     background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .DH {
@@ -88,7 +88,14 @@ a {
     line-height: 50px;
     height: 50px;
 }
-
+.font{
+    position: relative;
+    top:10%;
+    left: -15%;
+    font-size: 50px;
+    text-shadow: 0 0 2px black;
+    color: white;
+}
 .nav {
     display: none;
     z-index: 100;
@@ -105,9 +112,8 @@ a {
 }
 
 .GG {
-    position: absolute;
-    top: 8%;
-    left: 20%;
+    position: relative;
+    top: 5%;
     width: 990px;
     height: 700px;
     margin: 0 auto;

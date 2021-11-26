@@ -1,0 +1,133 @@
+.article{
+    position: absolute;
+    left: 23%;
+    width: 60%;
+    top:15%;
+    text-align: start;
+    background-color: white;
+}
+.article-list-block{
+
+    display: flex;
+    border-bottom: 1px dotted #dddddd;
+    /*
+    padding: 1rem 0 1rem 0;
+     */
+}
+.list-right{
+    -webkit-box-flex: 1;
+    flex: 1;
+    color: #999999;
+    font-size: 14px;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction:normal;
+    flex-direction:column;
+}
+.article-title{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.article-info{
+    margin-top:16px;
+    padding-bottom: 8px;
+    display: flex;
+    -webkit-box-orient:horizontal;
+    -webkit-box-direction:normal;
+    flex-direction:row;
+    -webkit-box-align:center;
+    align-items:center;
+    -webkit-box-pack:justify;
+    justify-content:space-between;
+}
+.title-txt{
+    font-size: 30px;
+    color: black;
+    margin-bottom: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+}
+.article-time{
+    display: flex;
+    height: 20px;
+    justify-content: space-between;
+    align-items: center;
+    color: #999aaa;
+    line-height: 16px;
+    align-items: flex-start;
+    flex-shrink: 0;
+    overflow-x: auto;
+}
+.readcomment{
+    display: flex;
+    margin-left: 0;
+}
+.at{
+    display: flex;
+}
+#fc{
+    position: fixed;
+    margin-left: 40px;
+    top:8%;
+    z-index: 11;
+    width: 175px;
+    height: 42px;
+    line-height: 40px;
+    cursor: pointer;
+    background: #fc5531;
+    border-radius: 23px;
+    font-size: 18px;
+    font-family: PingFangSC-Semibold,PingFang SC;
+    font-weight: 600;
+    color: #fff;
+    text-align: center;
+
+}
+#fc a{
+    background-color: transparent;
+}
+.row{
+    color: #999aaa;
+    word-break: break-all;
+    max-height: 48px;
+    -webkit-line-clamp: 2;
+    line-height: 24px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+.row h1 h2 h3 h4 p span a{
+    font-size: 10px;
+}
+.author{
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    color: #999aaa;
+    display: inline-block;
+    width: 100px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 20px;
+    vertical-align: top;
+    text-decoration: none;
+}
+.search{
+    z-index: 9;
+    position: fixed;
+    left: 40%;
+    top: 60px
+}
+.showgame{
+    height: 340px;
+    width:120px;
+    left:10%;
+    top:15%;
+    overflow-x:hidden;
+    position:fixed;
+    background-color: white;
+    border-radius:10px;
+}

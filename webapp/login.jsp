@@ -99,6 +99,7 @@
             }
 
             if (t == 1) {
+                bean.UpdateDate(uid);
                 session = null;//清除页面滞留的session，这样点击退出以后，下次登录确保重新获取新的用户名
                 session = request.getSession();//获取session
                 session.setAttribute("name", name);//将用户名传递给session

@@ -86,10 +86,10 @@
 
 <div  style="position:relative;top: 100px;">
         <!-- 设置搜素框-->
-        <form action="#"  method="post" style="position: relative;left: 80%;top: 35px">
+        <form action="search.jsp"  method="post" style="position: relative;left: 80%;top: 35px">
             <div style="width:600px;height:36px;">
-                <input type="text" style="width: 500px;height: 36px;border-radius:20px">
-                <input id="gender" name="gender" type="submit"  value="Search" style="position: relative;left:-64px;width:60px;height:36px;border-radius:20px;background-color: #dfe8ff;">
+                    <input type="text" id="con" placeholder="输入想要查询的内容" style="width: 500px;height: 36px;border-radius:20px">
+                    <input id="gender" name="gender" type="submit"  value="Search" style="position: relative;left:-64px;width:60px;height:36px;border-radius:20px;background-color: #dfe8ff;">
             </div>
         </form>
         <!-- 设置显示框，后期与数据库连接-->

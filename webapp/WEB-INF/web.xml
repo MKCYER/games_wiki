@@ -3,5 +3,25 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
-
+    <!-- 自定义登录过滤器 -->
+    <filter>
+        <description>登录过滤器</description>
+        <filter-name>ControlFilter</filter-name>
+        <filter-class>web.ControlFilter</filter-class>
+        <!-- 初始化参数 -->
+        <init-param>
+            <param-name>passURL</param-name>
+            <param-value>
+                Control_login,login
+            </param-value>
+        </init-param>
+        <init-param>
+            <param-name>redirectURL</param-name>
+            <param-value>login</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>ControlFilter</filter-name>
+        <url-pattern>/control/*</url-pattern>
+    </filter-mapping>
 </web-app>

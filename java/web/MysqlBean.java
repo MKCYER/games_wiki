@@ -21,7 +21,7 @@ public class MysqlBean {
             System.out.println(e);
         }
     }
-    private boolean sql_inj(String str){
+    public boolean sql_inj(String str){
         String inj_str = "'|,|=|+|*|(|)|^|;";
         String inj_stra[] = inj_str.split("|");
         for (int i=0 ; i<inj_stra.length ; i++ ){
@@ -49,8 +49,8 @@ public class MysqlBean {
         if(sql_inj(uid)||sql_inj(pid))
             return false;
         try {
-            System.out.println(uid);
-            System.out.println(pid);
+//            System.out.println(uid);
+//            System.out.println(pid);
             if(sta.executeUpdate("delete from passages where uid="+uid+" and pid="+pid+";")!=0)
                 return true;
         } catch (SQLException e) {
@@ -109,6 +109,32 @@ public class MysqlBean {
                 System.out.println("更新硬币出错");
             }
         }
+    }
+    public String getUserName(String uid) throws SQLException {
+        ResultSet set= sta.executeQuery("select * from users where uid="+uid+";");
+        set.next();
+        return set.getString("userName");
+    }
+    public ResultSet user_login(String account,String pwd) throws SQLException {
+        if(sql_inj(account)||sql_inj(pwd))
+            return null;
+        else
+            return executeQuery("select * from users where userAcc=\""+account+"\" and userPasswd=\""+pwd+"\";");
+    }
+    public boolean admin_login(String name,String pwd){
+        if(sql_inj(name)||sql_inj(pwd))
+            return false;
+        else{
+            ResultSet set= null;
+            try {
+                set = executeQuery("select * from admin where name=\""+name+"\" and passwd=\""+pwd+"\";");
+                if(set.next())
+                    return true;
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return false;
     }
     public Connection getCon() {
         return con;

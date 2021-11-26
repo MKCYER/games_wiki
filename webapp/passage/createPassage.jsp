@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="../css/style.css" type="text/css" media="all" />
     <link href="../css/index.css" rel="stylesheet">
 </head>
-<body>
+<body style="background-color: #f5f6f7">
 <%
     //判断用户是否登录
     String name=String.valueOf(request.getSession().getAttribute("name"));

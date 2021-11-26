@@ -1,40 +1,34 @@
 <%@ page import="java.sql.ResultSet" %>
-<%@ page import="java.net.URLDecoder" %>
-<%@ page import="java.util.Base64" %>
-<%@ page import="java.util.Date" %>
-<%@ page import="java.text.SimpleDateFormat" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
+<html lang="en">
 <head>
-    <title>攻略管理</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="keywords" content="" />
     <title>文章创作</title>
     <script src="../js/showdown.js"></script>
-    <link rel="stylesheet" type="text/css" href="../css/markdownStyle.css">
     <script src="https://cdn.staticfile.org/jquery/3.4.0/jquery.min.js"></script>
     <script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-    <script src="../js/wangEditor.min.js"></script>
     <script src="../js/loginbutton.js"></script>
     <script src="../js/menu_jquery.js"></script>
     <link rel="stylesheet" href="../css/style.css" type="text/css" media="all" />
     <link href="../css/index.css" rel="stylesheet">
-    <link href="../css/articlelist.css" rel="stylesheet">
+    <link href="../editor.md-master/css/editormd.css" rel="stylesheet">
+    <script src="../editor.md-master/editormd.min.js"></script>
 </head>
-<body style="background-color: #f5f6f7">
-    <%
+<body>
+<%
     //判断用户是否登录
     String name=String.valueOf(request.getSession().getAttribute("name"));
     String account=String.valueOf(request.getSession().getAttribute("account"));
     String uid=String.valueOf(request.getSession().getAttribute("uid"));
     String coin=String.valueOf(request.getSession().getAttribute("coin"));
 %>
-<!-- login按钮 -->
-    <%if(name.equals("null")){
-            response.sendRedirect("../games_wiki.jsp");
-        }else{%>
+<!-- login按钮 用户没有登陆的情况下显示登录按钮，否则显示用户名 -->
+<%if(name.equals("null")){
+    response.sendRedirect("../games_wiki.jsp");
+}else{%>
 <div style="position: absolute;right: 0px;text-align: center">
     <div id="loginpop" style="width: 100px;">
         <a href="#" id="loginButton" ><span><%=name%></span></a>
@@ -55,34 +49,28 @@
         </div>
     </div>
 </div>
-    <%}%>
+<%}%>
 <!-- login按钮 end -->
-<div id="fc">
-    <a onclick="window.location.href='createPassage.jsp'">发布</a>
+<div class="site">
+    <!-- 出入框的格式需要在js中改变-->
+    <select name="games" id="games">
+        <option value="-1">请选择所属游戏</option>
+        <jsp:useBean id="bean" class="web.MysqlBean">
+            <%
+                ResultSet set=bean.executeQuery("select * from games;");
+                while (set.next()){
+                    out.write("<option value="+set.getString("gameId")+">"+set.getString("gameName")+"</option>");
+                }
+            %>
+        </jsp:useBean>
+    </select><span id="tip1" style="color: red"></span><br>
+    <input type="text" name="head" id="head" placeholder="请输入标题" style="height: 30px;width: 260px"><span style="color: red" id="tip"></span><br>
+    <div id="test-editor">
+        <textarea id="inp-content" style="display:none;">这是我首次使用</textarea>
+    </div>
+    <script src="../js/editorcontrol.js"></script>
+    <button class="submit" onclick="post()">提交</button>
 </div>
-<div class="article">
-<jsp:useBean id="bean" class="web.MysqlBean">
-    <%
-        ResultSet set=bean.executeQuery("select * from passages where uid="+uid);
-        while(set.next()){
-            out.write("<div class=\"article-list-block\">");
-            out.write("<div class=\"list-right\">");
-            out.write("<div class=\"article-title\">");
-            out.write("<a class=\"title-txt\" style=\"cursor: pointer;\" onclick=\"window.location.href='showPassage.jsp?pid="+set.getString("pid")+"'\">"+set.getString("title")+"</a>");
-            out.write("<p class=\"article-time\">"+set.getString("changeTime")+"</p></div>");
-            out.write("<div class=\"article-info\">");
-            out.write("<p class=\"readcomment\"> 阅读 "+set.getString("views")+"</p><div>");
-            out.write("<a class=\"oper\" href=\"updatePassage.jsp?pid="+set.getString("pid")+"\">编辑</a>");
-            out.write("<a class=\"del\" href=\"DelPassage?pid="+set.getString("pid")+"\" onclick=\"return disp_confirm()\">删除</a>");
-            out.write("</div></div></div></div>");
-        }
-    %>
-</jsp:useBean>
-</div>
-<script>
-    function disp_confirm(){
-        return confirm("确认删除");
-    }
-</script>
+
 </body>
 </html>

@@ -17,7 +17,7 @@
     <script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
     <script src="../js/loginbutton.js"></script>
 </head>
-<body>
+<body style="background-color: black">
 <%
     //判断用户是否登录
     String name=String.valueOf(request.getSession().getAttribute("name"));
@@ -59,6 +59,9 @@
     <!-- login按钮 end -->
     <!-- 无线循环播放图片 -->
     <div class="GG" id="top">
+        <div class="font">
+            <i onclick="window.location.href='showwiki.jsp?gid=3'" style="cursor: pointer">攻略</i>
+        </div>
         <div id="demo">
             <div id="indemo">
                 <div id="demo1">
