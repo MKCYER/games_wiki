@@ -13,8 +13,8 @@ public class MysqlBean {
             Class.forName("com.mysql.jdbc.Driver");  //驱动程序名
             String url = "jdbc:mysql://localhost:3306/games_wiki"; //数据库名
             String username = "root";  //数据库用户名
-            //String passwd = "bujisql2021";  //服务器数据库密
-            String passwd="lk1441553496";
+            String passwd = "bujisql2021";  //服务器数据库密
+            //String passwd="lk1441553496";
             con = DriverManager.getConnection(url, username, passwd);
             sta = con.createStatement();
         } catch (Exception e) {
@@ -56,6 +56,48 @@ public class MysqlBean {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        return false;
+    }
+    public boolean adminDelPassage(String pid){
+        if(sql_inj(pid))
+            return false;
+        try {
+            if(sta.executeUpdate("delete from passages where pid="+pid+";")!=0)
+                return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+    public boolean adminDelUser(String uid){
+        if(sql_inj(uid))
+            return false;
+        try {
+            if(sta.executeUpdate("delete from users where uid="+uid+";")!=0)
+                return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+    public ResultSet getUserMessage(String uid){
+        if(sql_inj(uid))
+            return null;
+        else {
+            try {
+                return executeQuery("select * from users where uid="+uid+";");
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return null;
+    }
+    public boolean updateUser(String uid,String name,String account,String email,String passwd) throws SQLException {
+        if(sql_inj(name)||sql_inj(account)||sql_inj(email)||sql_inj(passwd)||sql_inj(uid))
+            return false;
+        String sql="update users set userName=\""+name+"\",userAcc=\""+account+"\",email=\""+email+"\",userPasswd=\""+passwd+"\" where uid="+uid+";";
+        if(sta.executeUpdate(sql)!=0)
+            return true;
         return false;
     }
     public boolean insertUsers(String name,String account,String passwd,String email) throws SQLException {

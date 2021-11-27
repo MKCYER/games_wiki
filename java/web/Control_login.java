@@ -33,7 +33,7 @@ public class Control_login extends HttpServlet {
             session.setAttribute("name", name);//将用户名传递给session
             session.setAttribute("pwd", passwd);
             session.setAttribute("aid", -1);
-            response.sendRedirect("design.html");
+            response.sendRedirect("function/userControl.jsp");
         }else
             response.getWriter().append("请重新登录").append("<a href=\"login.html\">返回</a>");
     }

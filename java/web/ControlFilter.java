@@ -39,7 +39,7 @@ public class ControlFilter implements Filter {
             passUrls.add(url.trim());
         }
         ctxPath = config.getServletContext().getContextPath();
-        //System.out.println("ctx = " + ctxPath);
+        System.out.println("ctx = " + ctxPath);
     }
 
     public void destroy() {
@@ -68,7 +68,7 @@ public class ControlFilter implements Filter {
         if (session.getAttribute("aid") != null) {
             chain.doFilter(rst, rps);
         } else {
-            rps.sendRedirect("Control_login");
+            rps.sendRedirect(ctxPath+"/control/Control_login");
         }
     }
 }

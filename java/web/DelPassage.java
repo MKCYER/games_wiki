@@ -15,6 +15,14 @@ public class DelPassage extends HttpServlet {
         String uid= String.valueOf(request.getSession().getAttribute("uid"));
         String pid=request.getParameter("pid");
         MysqlBean bean=new MysqlBean();
+        if(request.getSession().getAttribute("aid").equals("-1")){
+            if(bean.adminDelPassage(pid))
+                response.sendRedirect("../control/function/passageControl.jsp");
+            else {
+                response.setHeader("refresh", "1.5;url=../control/function/passageControl.jsp");
+                response.getWriter().write("删除文章失败");
+            }
+        }
         if(bean.delpassage(uid,pid))
             response.sendRedirect("control.jsp");
         else{

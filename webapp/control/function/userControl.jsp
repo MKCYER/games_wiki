@@ -98,7 +98,7 @@
             <form name="myform" id="myform" method="post">
                 <div class="result-title">
                     <div class="result-list">
-                        <a href="insert.html"><i class="icon-font"></i>新增作品</a>
+                        <a href="insert.html"><i class="icon-font"></i>新增用户</a>
                         <a id="batchDel" href="javascript:void(0)"><i class="icon-font"></i>批量删除</a>
                         <a id="updateOrd" href="javascript:void(0)"><i class="icon-font"></i>更新排序</a>
                     </div>
@@ -156,7 +156,7 @@
                                     out.write("<tr><td class=\"tc\"><input name=\"id[]\" value=\""+set.getString("uid")+"\" type=\"checkbox\"></td>");
                                     out.write("<td>"+set.getString("uid")+"</td><td>"+set.getString("userName")+"</td><td>"+set.getString("userAcc")+"</td>");
                                     out.write("<td>"+set.getString("lastdate")+"</td>");
-                                    out.write("<td><a class=\"link-update\" href=\"#\">修改</a>  <a class=\"link-del\" href=\"#\">删除</a>");
+                                    out.write("<td><a class=\"link-update\" href=\"changeUser.jsp?uid="+set.getString("uid")+"\">修改</a>  <a class=\"link-del\" onclick=\"return aa()\" href=\"DelUser?uid="+set.getString("uid")+"\">删除</a>");
                                     out.write("</td></tr>");
                                     if(!set.next())
                                         break;;
@@ -166,6 +166,11 @@
                             }
                         %>
                     </table>
+                    <script>
+                        function aa(){
+                            return confirm("确认删除");
+                        }
+                    </script>
                     <div class="list-page">
                         <form>
                             请您输入跳转页面<input type="text" name="nowpage" size=1>

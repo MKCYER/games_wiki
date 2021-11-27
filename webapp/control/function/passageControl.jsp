@@ -158,7 +158,7 @@
                                     out.write("<tr><td class=\"tc\"><input name=\"id[]\" value=\""+set.getString("pid")+"\" type=\"checkbox\"></td>");
                                     out.write("<td>"+set.getString("pid")+"</td><td>"+set.getString("gameName")+"</td><td>"+"</td><td>"+set.getString("title")+"</td><td>"+set.getString("userName")+"</td>");
                                     out.write("<td>"+set.getString("changeTime")+"</td>");
-                                    out.write("<td><a class=\"link-update\" href=\"#\">修改</a>  <a class=\"link-del\" href=\"#\">删除</a>");
+                                    out.write("<td><a class=\"link-update\" href=\"#\">修改</a>  <a class=\"link-del\" onclick=\"return aa()\" href=\"../../passage/DelPassage?pid="+set.getString("pid")+"\">删除</a>");
                                     out.write("</td></tr>");
                                     if(!set.next())
                                         break;;
@@ -168,6 +168,11 @@
                             }
                         %>
                     </table>
+                    <script>
+                        function aa(){
+                            return confirm("确认删除");
+                        }
+                    </script>
                     <div class="list-page">
                         <form>
                             请您输入跳转页面<input type="text" name="nowpage" size=1>
