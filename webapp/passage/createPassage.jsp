@@ -68,8 +68,8 @@
         <div id="editor" style="height: 80%;"><!-- 键盘每次点击实时调用 -->
         </div>
         <script src="../js/setcontentTomarkdown.js"></script>
-    <button class="submit" onclick="post()">提交</button>
-</div>
 
+</div>
+<button class="submit" onclick="post()">提交</button>
 </body>
 </html>

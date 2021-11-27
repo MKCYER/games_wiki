@@ -1,15 +1,15 @@
 
 .site{
-    position: absolute;
+    position: relative;
     top:10%;
     left: 10%;
     width: 80%;
     height: 80%;
 }
 .submit{
-    position: relative;
-    top: 18%;
-    left: 94%;
+    position: fixed;
+    top: 16%;
+    left: 90%;
 }
 #editor {
     height: 80%;
