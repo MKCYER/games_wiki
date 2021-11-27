@@ -50,13 +50,13 @@
     String con=request.getParameter("con");
     if(con==null)
         con="";
-    String gameid=request.getParameter("gid");
+    String gameid=request.getSession().getAttribute("gid").toString();
 %>
 <!-- login按钮 用户没有登陆的情况下显示登录按钮，否则显示用户名 -->
 <%if(name.equals("null")){%>
 <div style="position: absolute;right: 0px;text-align: center">
     <div id="loginpop" style="position:relative;width: 100px">
-        <a href="#" id="loginButton" onclick="window.location.href='login.jsp'"><span>Login</span></a>
+        <a href="#" id="loginButton" onclick="window.location.href='../login.jsp'"><span>Login</span></a>
     </div>
 </div>
 <%}else{%>
@@ -72,8 +72,8 @@
                     <input type="text" name="uid" id="account" disabled value="<%=account%>">
                     <span>硬币数</span>
                     <input type="text" name="coin" id="coin" disabled value="<%=coin%>">
-                    <button onclick="window.location.href='passage/control.jsp'">内容管理</button>
-                    <button onclick="window.location.href='passage/createPassage.jsp'" style="margin-top: 10px">发布攻略</button>
+                    <button onclick="window.location.href='../passage/control.jsp'">内容管理</button>
+                    <button onclick="window.location.href='../passage/createPassage.jsp'" style="margin-top: 10px">发布攻略</button>
                     <form method="post" action="ClearSession">
                         <input type="submit" value="退出" style="cursor: pointer;position:relative;top:20px;width: 50px;background-color: #03A9F4">
                     </form>

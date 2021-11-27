@@ -15,7 +15,7 @@ public class DelPassage extends HttpServlet {
         String uid= String.valueOf(request.getSession().getAttribute("uid"));
         String pid=request.getParameter("pid");
         MysqlBean bean=new MysqlBean();
-        if(request.getSession().getAttribute("aid").equals("-1")){
+        if(String.valueOf(request.getSession().getAttribute("aid")).equals("-1")){
             if(bean.adminDelPassage(pid))
                 response.sendRedirect("../control/function/passageControl.jsp");
             else {

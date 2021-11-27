@@ -24,6 +24,7 @@
     String account=String.valueOf(request.getSession().getAttribute("account"));
     String uid=String.valueOf(request.getSession().getAttribute("uid"));
     String coin=String.valueOf(request.getSession().getAttribute("coin"));
+    request.getSession().setAttribute("gid",3);
 %>
 <div class="ALL">
     <!-- login按钮 用户没有登陆的情况下显示登录按钮，否则显示用户名 -->
@@ -46,7 +47,8 @@
                         <input type="text" name="uid" id="account" disabled value="<%=account%>">
                         <span>硬币数</span>
                         <input type="text" name="coin" id="coin" disabled value="<%=coin%>">
-                        <button onclick="window.location.href='passage/createPassage.jsp'">发布攻略</button>
+                        <button onclick="window.location.href='../passage/control.jsp'">内容管理</button><br>
+                        <button onclick="window.location.href='../passage/createPassage.jsp'" style="margin-top: 10px">发布攻略</button>
                         <form method="post" action="../ClearSession">
                             <input type="submit" value="退出" style="cursor: pointer;position:relative;top:15px;width: 50px;background-color: #03A9F4">
                         </form>
