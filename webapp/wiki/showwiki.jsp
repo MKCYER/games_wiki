@@ -88,7 +88,7 @@
 <div>
     <form action="search.jsp"  method="post" class="search">
         <div style="width:600px;height:36px;">
-            <input type="text" id="con" placeholder="输入想要查找的内容" style="width: 500px;height: 36px;border-radius:20px">
+            <input type="text" id="con" name="con" placeholder="输入想要查找的内容" style="width: 500px;height: 36px;border-radius:20px">
             <input id="gender" name="gender" type="submit"  value="Search" style="position: relative;left:-64px;width:60px;height:36px;border-radius:20px;background-color: #dfe8ff;">
         </div>
     </form>
